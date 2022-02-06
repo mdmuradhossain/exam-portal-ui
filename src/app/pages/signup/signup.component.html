@@ -1,1 +1,60 @@
-<p>signup works!</p>
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-6 offset-md-3">
+        <div class="container text-center">
+          <img
+            src="../../../assets/images/logo.svg"
+            alt=""
+            width="30px"
+            height="30px"
+          />
+        </div>
+        <h1 class="text-center">Register Here!</h1>
+        <form action="">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your First Name</mat-label>
+            <input matInput placeholder="first name" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Last Name</mat-label>
+            <input matInput placeholder="last name" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Enter your Phone Number</mat-label>
+            <input matInput placeholder="phone number" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="email" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Username</mat-label>
+            <input matInput placeholder="username" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="container text-center">
+            <button mat-raised-button color="primary">Sign Up</button>
+            <button type="reset" style="margin-left: 20px" mat-raised-button>
+              Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
