@@ -1,1 +1,70 @@
-<p>login works!</p>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <mat-card style="background-color: white">
+        <div class="container text-center">
+          <img
+            src="../../../assets/images/login.svg"
+            alt=""
+            width="34px"
+            height="34px"
+          />
+        </div>
+        <h1 class="text-center">Login</h1>
+        <form>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Enter your Username</mat-label>
+            <input matInput placeholder="username" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Enter your password</mat-label>
+            <input matInput />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="container text-center">
+            <button mat-raised-button color="primary">Login</button>
+            <button type="reset" style="margin-left: 20px" mat-raised-button>
+              Create New Account
+            </button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="container text-center">
+        <img
+          src="../../../assets/images/login.svg"
+          alt=""
+          width="34px"
+          height="34px"
+        />
+      </div>
+      <h1 class="text-center">Login</h1>
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="username" />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <a href="/signup" class="btn btn-light ml20">Create New Account</a>
+      </form>
+    </div>
+  </div>
+</div>
