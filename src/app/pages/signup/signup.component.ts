@@ -7,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
   hide = true;
+  user = {
+    username: '',
+    email: '',
+    password: '',
+    firstname: '',
+    lastname: '',
+    phone: '',
+  };
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    if (this.user.username == null || this.user.username == '') {
+      alert('Username is required');
+      return;
+    }
+    console.log(this.user);
+  }
 }
