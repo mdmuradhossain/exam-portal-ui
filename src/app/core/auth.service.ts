@@ -13,4 +13,46 @@ export class AuthService {
   generateToken(loginData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/generateToken`, loginData);
   }
+
+  loginUser(authToken: string) {
+    localStorage.setItem('authToken', authToken);
+    return true;
+  }
+
+  isLoggedIn() {
+    const authToken = localStorage.getItem('authToken');
+    if (authToken == undefined || authToken == '' || authToken == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  logOut() {
+    localStorage.removeItem('authToken');
+    return true;
+  }
+
+  getAuthToken() {
+    return localStorage.getItem('authToken');
+  }
+
+  setUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  getUser() {
+    const user = localStorage.getItem('user');
+    if (user != null) {
+      return JSON.parse(user);
+    } else {
+      this.logOut();
+      return null;
+    }
+  }
+
+  getUserRole() {
+    const user = this.getUser();
+    return user.authorities[0].authority;
+  }
 }

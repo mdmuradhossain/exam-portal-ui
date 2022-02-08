@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  login() {
+  onSubmit() {
     if (
       this.loginData.username.trim() == '' ||
       this.loginData.username == null
