@@ -44,7 +44,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <div class="container text-center">
+      <div class="container text-center p-3">
         <img
           src="../../../assets/images/login.svg"
           alt=""
@@ -53,17 +53,31 @@
         />
       </div>
       <h1 class="text-center">Login</h1>
-      <form>
+      <form (ngSubmit)="login()">
         <div class="mb-3">
-          <label for="username" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="username" />
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            [(ngModel)]="loginData.username"
+          />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" />
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="loginData.password"
+          />
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <a href="/signup" class="btn btn-light ml20">Create New Account</a>
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <a href="/signup" class="btn btn-light ml20">Create New Account</a>
+        </div>
       </form>
     </div>
   </div>

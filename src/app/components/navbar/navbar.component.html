@@ -1,1 +1,33 @@
-
+<mat-toolbar color="primary">
+  <a routerLink="/">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon style="color: white">school</mat-icon>
+    </button>
+    <span style="color: white">Exam Portal</span>
+  </a>
+  <span class="example-spacer"></span>
+  <a
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with heart icon"
+    style="margin-right: 30px"
+    routerLink="/login"
+  >
+    Login
+    <mat-icon>login</mat-icon>
+  </a>
+  <a
+    mat-icon-button
+    class="example-icon mr20"
+    aria-label="Example icon-button with share icon"
+    style="margin-right: 30px"
+    routerLink="/signup"
+  >
+    Register
+    <mat-icon>how_to_reg</mat-icon>
+  </a>
+</mat-toolbar>
