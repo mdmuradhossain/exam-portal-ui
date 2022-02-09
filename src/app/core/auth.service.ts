@@ -14,12 +14,12 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/generateToken`, loginData);
   }
 
-  loginUser(authToken: string) {
+  loginUser(authToken: any) {
     localStorage.setItem('authToken', authToken);
     return true;
   }
 
-  getCurrentUser() {
+  getCurrentUser(): Observable<any> {
     return this.http.get(`${this.baseUrl}/currentUser`);
   }
   isLoggedIn() {
