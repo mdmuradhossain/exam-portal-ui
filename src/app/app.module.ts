@@ -21,6 +21,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { authInterceptorProvidors } from './core/auth.interceptor';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +32,8 @@ import { authInterceptorProvidors } from './core/auth.interceptor';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,

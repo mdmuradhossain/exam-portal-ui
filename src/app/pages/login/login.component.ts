@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private snackBar: MatSnackBar,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -42,10 +44,21 @@ export class LoginComponent implements OnInit {
           this.authService.getCurrentUser().subscribe((user: any) => {
             this.authService.setUser(user);
             console.log(user);
+            if (this.authService.getUserRole() == 'ROLE_ADMIN') {
+              this.router.navigate(['admin']);
+            } else if (this.authService.getUserRole() == 'ROLE_USER') {
+              this.router.navigate(['user']);
+            } else {
+              this.authService.logOut();
+              this.router.navigate(['']);
+            }
           });
         },
         (err) => {
           console.log(err);
+          this.snackBar.open('Invalid username/password', 'Ok', {
+            duration: 3000,
+          });
         }
       );
     }
