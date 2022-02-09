@@ -19,6 +19,9 @@ export class AuthService {
     return true;
   }
 
+  getCurrentUser() {
+    return this.http.get(`${this.baseUrl}/currentUser`);
+  }
   isLoggedIn() {
     const authToken = localStorage.getItem('authToken');
     if (authToken == undefined || authToken == '' || authToken == null) {
@@ -30,6 +33,7 @@ export class AuthService {
 
   logOut() {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('user');
     return true;
   }
 
