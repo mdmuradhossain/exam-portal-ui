@@ -16,6 +16,7 @@
     aria-label="Example icon-button with heart icon"
     style="margin-right: 30px"
     routerLink="/login"
+    *ngIf="!isLoggedIn()"
   >
     Login
     <mat-icon>login</mat-icon>
@@ -26,8 +27,32 @@
     aria-label="Example icon-button with share icon"
     style="margin-right: 30px"
     routerLink="/signup"
+    *ngIf="!isLoggedIn()"
   >
     Register
     <mat-icon>how_to_reg</mat-icon>
+  </a>
+  <a
+    mat-icon-button
+    class="example-icon mr20"
+    aria-label="Example icon-button with share icon"
+    style="margin-right: 40px"
+    routerLink="/user"
+    *ngIf="isLoggedIn()"
+  >
+    {{ users.username }}
+    <mat-icon>account_circle</mat-icon>
+  </a>
+  <a
+    (click)="logOut()"
+    mat-icon-button
+    class="example-icon mr20"
+    aria-label="Example icon-button with share icon"
+    style="margin-right: 30px"
+    routerLink="/signup"
+    *ngIf="isLoggedIn()"
+  >
+    Logout
+    <mat-icon>logout</mat-icon>
   </a>
 </mat-toolbar>
