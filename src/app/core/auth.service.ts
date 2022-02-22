@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   baseUrl: string = environment.baseUrl;
+
   constructor(private http: HttpClient) {}
 
   generateToken(loginData: any): Observable<any> {
@@ -16,6 +17,7 @@ export class AuthService {
 
   loginUser(authToken: any) {
     localStorage.setItem('authToken', authToken);
+
     return true;
   }
 

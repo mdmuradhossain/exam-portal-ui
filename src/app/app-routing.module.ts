@@ -5,6 +5,7 @@ import { UserGuard } from './core/user.guard';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
@@ -26,8 +27,14 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboardComponent,
-    pathMatch: 'full',
+    // pathMatch: 'full',
     canActivate: [AdminGuard],
+    children: [
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+    ],
   },
   {
     path: 'user',

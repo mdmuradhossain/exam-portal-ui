@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/core/auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  // isLoggedIn = false;
   users = {
     username: '',
     firstName: '',
@@ -16,10 +17,12 @@ export class NavbarComponent implements OnInit {
     password: '',
     phone: '',
   };
-  constructor(public authService: AuthService, private router: Router) {}
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.users = this.getUser();
+    // this.isLoggedIn = this.authService.isLoggedIn();
   }
 
   public getUser() {

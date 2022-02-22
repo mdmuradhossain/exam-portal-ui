@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
           this.authService.getCurrentUser().subscribe((user: any) => {
             this.authService.setUser(user);
             console.log(user);
-            if (this.authService.getUserRole() == 'ROLE_ADMIN') {
+            if (this.authService.getUserRole() == 'ADMIN') {
               this.router.navigate(['admin']);
-            } else if (this.authService.getUserRole() == 'ROLE_USER') {
+            } else if (this.authService.getUserRole() == 'USER') {
               this.router.navigate(['user']);
             } else {
               this.authService.logOut();
