@@ -3,11 +3,43 @@
   <mat-card-content>
     <div class="container">
       <div class="container text-center">
-        <img src="../../../assets/images/person-fill.svg" alt="" />
+        <img
+          src="../../../assets/images/person-fill.svg"
+          alt=""
+          class="profile-image"
+        />
+        <h1 class="mt20">Md Murad Hossain</h1>
       </div>
       <div class="row">
-        <div class="col-md-10 offset-md-1"></div>
+        <div class="col-md-10 offset-md-1">
+          <table class="table text-center">
+            <tr>
+              <td>Username</td>
+              <td>murad</td>
+            </tr>
+            <tr>
+              <td>UserId</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>869578456</td>
+            </tr>
+            <tr>
+              <td>Role</td>
+              <td>ADMIN</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>active</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </mat-card-content>
+  <mat-card-actions class="text-center">
+    <button mat-raised-button color="primary">Update</button>
+    <button mat-raised-button color="warn">Delete</button>
+  </mat-card-actions>
 </mat-card>

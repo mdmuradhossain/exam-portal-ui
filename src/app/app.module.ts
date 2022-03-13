@@ -26,6 +26,7 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MatCardModule,
     MatToolbarModule,
     MatListModule,
+    MatTableModule,
   ],
   providers: [authInterceptorProvidors],
   bootstrap: [AppComponent],
