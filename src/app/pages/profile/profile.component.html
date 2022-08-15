@@ -1,5 +1,6 @@
 <mat-card>
   <h1>Your Profile Details</h1>
+  {{ user | json }}
   <mat-card-content>
     <div class="container">
       <div class="container text-center">
@@ -8,14 +9,14 @@
           alt=""
           class="profile-image"
         />
-        <h1 class="mt20">Md Murad Hossain</h1>
+        <h1 class="mt20">Md Murad Hossain {{ user.firstname }}</h1>
       </div>
       <div class="row">
         <div class="col-md-10 offset-md-1">
           <table class="table text-center">
             <tr>
               <td>Username</td>
-              <td>murad</td>
+              <td>{{ user.username }}</td>
             </tr>
             <tr>
               <td>UserId</td>
