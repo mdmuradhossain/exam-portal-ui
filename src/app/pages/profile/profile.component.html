@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="user">
   <h1>Your Profile Details</h1>
   {{ user | json }}
   <mat-card-content>
@@ -9,7 +9,7 @@
           alt=""
           class="profile-image"
         />
-        <h1 class="mt20">Md Murad Hossain {{ user.firstname }}</h1>
+        <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1>
       </div>
       <div class="row">
         <div class="col-md-10 offset-md-1">
@@ -20,19 +20,19 @@
             </tr>
             <tr>
               <td>UserId</td>
-              <td>3</td>
+              <td>{{ user.id }}</td>
             </tr>
-            <tr>
+            <tr *ngIf="user.phone">
               <td>Phone</td>
-              <td>869578456</td>
+              <td>{{ user.phone }}</td>
             </tr>
             <tr>
               <td>Role</td>
-              <td>ADMIN</td>
+              <td>{{ user.authorities[0].authority }}</td>
             </tr>
             <tr>
               <td>Status</td>
-              <td>active</td>
+              <td>{{ user.enabled ? "Active" : "Not Active" }}</td>
             </tr>
           </table>
         </div>

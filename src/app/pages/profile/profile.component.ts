@@ -7,10 +7,18 @@ import { AuthService } from 'src/app/core/auth.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  user = null;
+  user: any;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.user = this.authService.getUser();
+    // this.user = this.authService.getUser();
+    this.authService.getCurrentUser().subscribe(
+      (user) => {
+        this.user = user;
+      },
+      (err) => {
+        alert('User data not loaded from server....');
+      }
+    );
   }
 }
