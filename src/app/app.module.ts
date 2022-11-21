@@ -27,6 +27,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatTableModule } from '@angular/material/table';
+import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatTableModule } from '@angular/material/table';
     AdminDashboardComponent,
     ProfileComponent,
     SidebarComponent,
+    ViewCategoryComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
