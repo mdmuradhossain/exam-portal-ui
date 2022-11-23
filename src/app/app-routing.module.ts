@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './core/admin.guard';
 import { UserGuard } from './core/user.guard';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
       {
         path: 'categories',
         component: ViewCategoryComponent,
+      },
+      {
+        path: 'category/add',
+        component: AddCategoryComponent,
       },
     ],
   },
