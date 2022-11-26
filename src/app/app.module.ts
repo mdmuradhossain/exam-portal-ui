@@ -29,6 +29,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatTableModule } from '@angular/material/table';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewQuizComponent } from './pages/admin/view-quiz/view-quiz.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     SidebarComponent,
     ViewCategoryComponent,
     AddCategoryComponent,
+    ViewQuizComponent,
   ],
   imports: [
     BrowserModule,

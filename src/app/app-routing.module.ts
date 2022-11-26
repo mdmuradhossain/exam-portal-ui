@@ -5,6 +5,7 @@ import { UserGuard } from './core/user.guard';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
+import { ViewQuizComponent } from './pages/admin/view-quiz/view-quiz.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -48,6 +49,10 @@ const routes: Routes = [
       {
         path: 'category/add',
         component: AddCategoryComponent,
+      },
+      {
+        path: 'quizes',
+        component: ViewQuizComponent,
       },
     ],
   },
