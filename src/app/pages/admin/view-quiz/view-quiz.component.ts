@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizService } from 'src/app/core/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-quiz',
@@ -19,7 +21,18 @@ export class ViewQuizComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private _quizService: QuizService) {}
 
   ngOnInit(): void {}
+
+  getQuizes() {
+    this._quizService.getQuizes().subscribe(
+      (data: any) => {
+        this.quizes = data;
+      },
+      (err) => {
+        Swal.fire('Server Error!', 'err');
+      }
+    );
+  }
 }
