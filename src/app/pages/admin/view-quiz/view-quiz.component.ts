@@ -13,6 +13,9 @@ export class ViewQuizComponent implements OnInit {
       maxMarks: '',
       numberOfQuestions: '',
       active: false,
+      category: {
+        title: 'Java',
+      },
     },
   ];
 
