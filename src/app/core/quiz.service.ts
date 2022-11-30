@@ -12,4 +12,8 @@ export class QuizService {
   public getQuizes() {
     return this._http.get(`${this.baseUrl}/quiz/all`);
   }
+
+  public addQuiz(quiz: any) {
+    this._http.post(`${this.baseUrl}/quiz/add`, quiz);
+  }
 }
