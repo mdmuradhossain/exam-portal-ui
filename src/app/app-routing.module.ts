@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './core/admin.guard';
 import { UserGuard } from './core/user.guard';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
 import { ViewQuizComponent } from './pages/admin/view-quiz/view-quiz.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
       {
         path: 'quizes',
         component: ViewQuizComponent,
+      },
+      {
+        path: 'add-quiz',
+        component: AddQuizComponent,
       },
     ],
   },
