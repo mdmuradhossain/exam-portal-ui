@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 import { authInterceptorProvidors } from './core/auth.interceptor';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
@@ -31,7 +32,7 @@ import { ViewCategoryComponent } from './pages/admin/view-category/view-category
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewQuizComponent } from './pages/admin/view-quiz/view-quiz.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,8 @@ import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
     MatToolbarModule,
     MatListModule,
     MatTableModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
   providers: [authInterceptorProvidors],
   bootstrap: [AppComponent],
