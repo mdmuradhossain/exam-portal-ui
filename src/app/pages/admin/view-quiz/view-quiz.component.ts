@@ -23,12 +23,15 @@ export class ViewQuizComponent implements OnInit {
 
   constructor(private _quizService: QuizService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getQuizes();
+  }
 
-  getQuizes() {
+  getQuizes(): void {
     this._quizService.getQuizes().subscribe(
       (data: any) => {
         this.quizes = data;
+        console.log('quiz:' + data);
       },
       (err) => {
         Swal.fire('Server Error!', 'err');

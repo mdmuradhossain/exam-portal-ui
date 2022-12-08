@@ -48,11 +48,17 @@
         </mat-slide-toggle>
 
         <mat-form-field appearance="fill">
-          <mat-label>Favourite food</mat-label>
-          <mat-select>
-            <mat-option></mat-option>
+          <mat-label>Category</mat-label>
+          <mat-select name="category">
+            <mat-option *ngFor="let c of categories" [value]="c.id">{{
+              c.title
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
+
+        <div class="container text-center mt15">
+          <button mat-raised-button color="primary" type="submit">Add</button>
+        </div>
       </form>
     </div>
   </div>
