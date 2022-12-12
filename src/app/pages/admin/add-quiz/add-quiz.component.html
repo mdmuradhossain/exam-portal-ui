@@ -2,7 +2,7 @@
   <h1>Add New Quiz</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form>
+      <form (ngSubmit)="addQuiz()">
         <mat-form-field class="w100" appearance="outline">
           <mat-label>Enter Title</mat-label>
           <input
@@ -16,6 +16,7 @@
         <mat-form-field class="w100" appearance="outline">
           <mat-label>Enter Description</mat-label>
           <textarea
+            [(ngModel)]="quizData.description"
             type="text"
             name="description"
             placeholder="Enter here"
@@ -28,6 +29,7 @@
             <mat-form-field class="w100" appearance="outline">
               <mat-label>Max Marks</mat-label>
               <input
+                [(ngModel)]="quizData.maxMarks"
                 type="text"
                 name="maxMarks"
                 placeholder="Enter here"
@@ -39,6 +41,7 @@
             <mat-form-field class="w100" appearance="outline">
               <mat-label>Number of Question</mat-label>
               <input
+                [(ngModel)]="quizData.numberOfQuestions"
                 type="text"
                 name="numberOfQuestions"
                 placeholder="Enter here"
@@ -49,13 +52,17 @@
         </div>
 
         <!--active field-->
-        <mat-slide-toggle class="example-margin" [checked]="false">
+        <mat-slide-toggle
+          [(ngModel)]="quizData.active"
+          class="example-margin"
+          name="active"
+        >
           Public Status
         </mat-slide-toggle>
 
         <mat-form-field appearance="fill">
           <mat-label>Category</mat-label>
-          <mat-select name="category">
+          <mat-select name="category" [(ngModel)]="quizData.category.id">
             <mat-option *ngFor="let c of categories" [value]="c.id">{{
               c.title
             }}</mat-option>
@@ -69,3 +76,5 @@
     </div>
   </div>
 </mat-card>
+
+{{ quizData | json }}
