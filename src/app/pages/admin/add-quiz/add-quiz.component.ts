@@ -13,6 +13,15 @@ export class AddQuizComponent implements OnInit {
       title: '',
     },
   ];
+
+  quizData = {
+    title: '',
+    description: '',
+    maxMarks: '',
+    numberOfQuestions: '',
+    active: true,
+    category: {},
+  };
   constructor(private _categoryService: CategoryService) {}
 
   ngOnInit(): void {

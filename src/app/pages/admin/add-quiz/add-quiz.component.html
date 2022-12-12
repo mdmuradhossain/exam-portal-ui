@@ -5,7 +5,13 @@
       <form>
         <mat-form-field class="w100" appearance="outline">
           <mat-label>Enter Title</mat-label>
-          <input type="text" name="title" placeholder="Enter here" matInput />
+          <input
+            [(ngModel)]="quizData.title"
+            type="text"
+            name="title"
+            placeholder="Enter here"
+            matInput
+          />
         </mat-form-field>
         <mat-form-field class="w100" appearance="outline">
           <mat-label>Enter Description</mat-label>
