@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/core/category.service';
 
 import { QuizService } from 'src/app/core/quiz.service';
@@ -29,7 +30,8 @@ export class AddQuizComponent implements OnInit {
   };
   constructor(
     private _categoryService: CategoryService,
-    private _quizService: QuizService
+    private _quizService: QuizService,
+    private _snack: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -44,9 +46,15 @@ export class AddQuizComponent implements OnInit {
   }
 
   addQuiz() {
-    this._quizService.addQuiz(this.quizData).subscribe((data: any) => {
-      Swal.fire('Success', 'Quiz Added');
-    });
-    throw new Error('Method not implemented.');
+    if (this.quizData.title.trim() == '' || this.quizData.title == null) {
+      this._snack.open('TItle Required', '', {
+        duration: 3000,
+      });
+      return;
+    }
+    // this._quizService.addQuiz(this.quizData).subscribe((data: any) => {
+    //   Swal.fire('Success', 'Quiz Added');
+    // });
+    // throw new Error('Method not implemented.');
   }
 }
