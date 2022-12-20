@@ -47,14 +47,14 @@ export class AddQuizComponent implements OnInit {
 
   addQuiz() {
     if (this.quizData.title.trim() == '' || this.quizData.title == null) {
-      this._snack.open('TItle Required', '', {
+      this._snack.open('Title Required', '', {
         duration: 3000,
       });
       return;
     }
-    // this._quizService.addQuiz(this.quizData).subscribe((data: any) => {
-    //   Swal.fire('Success', 'Quiz Added');
-    // });
-    // throw new Error('Method not implemented.');
+    this._quizService.addQuiz(this.quizData).subscribe((data: any) => {
+      Swal.fire('Success', 'Quiz Added');
+    });
+    throw new Error('Method not implemented.');
   }
 }
