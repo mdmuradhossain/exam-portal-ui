@@ -52,9 +52,13 @@ export class AddQuizComponent implements OnInit {
       });
       return;
     }
-    this._quizService.addQuiz(this.quizData).subscribe((data: any) => {
-      Swal.fire('Success', 'Quiz Added');
-    });
-    throw new Error('Method not implemented.');
+    this._quizService.addQuiz(this.quizData).subscribe(
+      (data: any) => {
+        Swal.fire('Success', 'Quiz Added');
+      },
+      (err) => {
+        Swal.fire('Error while adding quiz', 'err');
+      }
+    );
   }
 }
