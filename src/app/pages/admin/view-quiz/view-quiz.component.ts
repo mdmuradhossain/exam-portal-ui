@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export class ViewQuizComponent implements OnInit {
   quizes = [
     {
+      id: '',
       title: '',
       description: '',
       maxMarks: '',
@@ -35,6 +36,17 @@ export class ViewQuizComponent implements OnInit {
       },
       (err) => {
         Swal.fire('Server Error!', 'err');
+      }
+    );
+  }
+
+  deleteQuiz(id: any) {
+    this._quizService.deleteQuiz(id).subscribe(
+      () => {
+        console.log('Quiz Deleted....');
+      },
+      (err) => {
+        Swal.fire('Operation Unsuccessfull', 'err');
       }
     );
   }

@@ -16,4 +16,8 @@ export class QuizService {
   public addQuiz(quiz: any) {
     return this._http.post(`${this.baseUrl}/quiz/add`, quiz);
   }
+
+  public deleteQuiz(id: any) {
+    return this._http.delete(`${this.baseUrl}/quiz/${id}`);
+  }
 }
