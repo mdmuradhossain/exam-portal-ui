@@ -33,6 +33,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { ViewQuizComponent } from './pages/admin/view-quiz/view-quiz.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AddCategoryComponent,
     ViewQuizComponent,
     AddQuizComponent,
+    UpdateQuizComponent,
   ],
   imports: [
     BrowserModule,
