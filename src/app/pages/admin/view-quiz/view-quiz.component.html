@@ -19,7 +19,13 @@
     <button mat-stroked-button color="accent">
       Number of questions {{ quiz.numberOfQuestions }}
     </button>
-    <button mat-flat-button color="accent">Update</button>
+    <button
+      mat-flat-button
+      color="accent"
+      [routerLink]="'/admin/quiz/' + quiz.id"
+    >
+      Update
+    </button>
     <button mat-flat-button color="accent">Attemts</button>
     <button mat-flat-button color="warn" (click)="deleteQuiz(quiz.id)">
       Delete{{ quiz.id }}
