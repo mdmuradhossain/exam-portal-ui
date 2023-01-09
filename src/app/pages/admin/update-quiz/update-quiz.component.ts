@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from 'src/app/core/category.service';
 import { QuizService } from 'src/app/core/quiz.service';
 
 @Component({
@@ -10,16 +11,19 @@ import { QuizService } from 'src/app/core/quiz.service';
 export class UpdateQuizComponent implements OnInit {
   quizId: any;
   quiz: any;
+  categories: any;
 
   constructor(
     private _route: ActivatedRoute,
-    private _quizService: QuizService
+    private _quizService: QuizService,
+    private _categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
     this.quizId = this._route.snapshot.params['id'];
     // alert(this.quizId);
     this.getQuiz(this.quizId);
+    this.getCategories();
   }
 
   public getQuiz(id: any) {
@@ -35,4 +39,10 @@ export class UpdateQuizComponent implements OnInit {
   }
 
   public updateQuiz(id: any) {}
+
+  public getCategories() {
+    this._categoryService.getCategories().subscribe((data: any) => {
+      this.categories = data;
+    });
+  }
 }

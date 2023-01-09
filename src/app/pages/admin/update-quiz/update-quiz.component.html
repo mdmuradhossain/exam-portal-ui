@@ -2,7 +2,7 @@
   <h1>Update Quiz</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form (ngSubmit)="updateQuiz(quiz.id)">
+      <form *ngIf="quiz" (ngSubmit)="updateQuiz(quiz.id)">
         <mat-form-field class="w100" appearance="outline">
           <mat-label>Enter Title</mat-label>
           <input
@@ -63,8 +63,8 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Category</mat-label>
-          <mat-select name="category" [(ngModel)]="quiz.category.id">
-            <mat-option *ngFor="let c of quiz.category" [value]="c.id">{{
+          <mat-select name="category" [(ngModel)]="quiz.category">
+            <mat-option *ngFor="let c of categories" [value]="c.id">{{
               c.title
             }}</mat-option>
           </mat-select>
