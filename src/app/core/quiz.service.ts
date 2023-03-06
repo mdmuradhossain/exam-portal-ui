@@ -24,4 +24,8 @@ export class QuizService {
   public getQuiz(id: any) {
     return this._http.get(`${this.baseUrl}/quiz/${id}`);
   }
+
+  public updateQuiz(quiz: any) {
+    return this._http.put(`${this.baseUrl}/quiz/`, quiz, id);
+  }
 }

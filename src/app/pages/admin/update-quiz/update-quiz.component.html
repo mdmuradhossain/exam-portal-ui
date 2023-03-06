@@ -63,7 +63,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Category</mat-label>
-          <mat-select name="category" [(ngModel)]="quiz.category">
+          <mat-select name="category" [(ngModel)]="quiz.category.id">
             <mat-option *ngFor="let c of categories" [value]="c.id">{{
               c.title
             }}</mat-option>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/core/category.service';
 import { QuizService } from 'src/app/core/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-quiz',
@@ -38,7 +39,15 @@ export class UpdateQuizComponent implements OnInit {
     );
   }
 
-  public updateQuiz(id: any) {}
+  public updateQuiz(id: any) {
+    return this._quizService.updateQuiz(this.quiz).subscribe(
+      (data) => {
+        Swal.fire('Updated');
+      },
+      (error) => [Swal.fire('Error', 'error in updating', 'error')]
+    );
+    alert('update' + id);
+  }
 
   public getCategories() {
     this._categoryService.getCategories().subscribe((data: any) => {
