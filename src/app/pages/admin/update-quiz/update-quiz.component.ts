@@ -40,7 +40,7 @@ export class UpdateQuizComponent implements OnInit {
   }
 
   public updateQuiz(id: any) {
-    return this._quizService.updateQuiz(this.quiz).subscribe(
+    this._quizService.updateQuiz(this.quiz).subscribe(
       (data) => {
         Swal.fire('Updated');
       },

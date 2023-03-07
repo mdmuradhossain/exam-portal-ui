@@ -26,6 +26,6 @@ export class QuizService {
   }
 
   public updateQuiz(quiz: any) {
-    return this._http.put(`${this.baseUrl}/quiz/`, quiz, id);
+    return this._http.put(`${this.baseUrl}/quiz/edit`, quiz);
   }
 }
